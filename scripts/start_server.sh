@@ -1,0 +1,1 @@
+python darmok/manage.py runserver

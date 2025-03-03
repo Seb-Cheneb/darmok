@@ -5,7 +5,8 @@ from .models import DarmokUser
 def landing_page(request):
     # retrieve all objects
     users = DarmokUser.objects.all()
-
+    for user in users:
+        print(user.phone_number)
     # Pagination with 3 posts per page
     # paginator = Paginator(post_list, 3)
     # get the page number from the url '?page=PAGE_NUMBER'
@@ -20,4 +21,4 @@ def landing_page(request):
     #     # If page_number is out of range get last page of results
     #     posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'forum/post/list.html', )
+    return render(request, 'base.html', )
